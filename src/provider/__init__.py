@@ -5,3 +5,9 @@
 @Author  : tianshiyang
 @File    : __init__.py.py
 """
+from .llms import chatGptLLM, qwenLLM
+
+__all__ = [
+    "chatGptLLM",
+    "qwenLLM"
+]
