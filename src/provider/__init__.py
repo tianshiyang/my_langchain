@@ -5,9 +5,10 @@
 @Author  : tianshiyang
 @File    : __init__.py.py
 """
-from .llms import chatGptLLM, qwenLLM
+from .llms import chatGptLLM, qwenLLM, google_gemini
 
 __all__ = [
     "chatGptLLM",
-    "qwenLLM"
+    "qwenLLM",
+    "google_gemini"
 ]
