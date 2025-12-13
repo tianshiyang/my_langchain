@@ -8,7 +8,7 @@
 from typing import Literal
 
 from langchain.agents import create_agent, AgentState
-from langchain.agents.middleware import HumanInTheLoopMiddleware, InterruptOnConfig
+from langchain.agents.middleware import HumanInTheLoopMiddleware, InterruptOnConfig, TodoListMiddleware
 from langchain.tools import tool
 from langchain_core.messages import HumanMessage
 from langchain_core.runnables import RunnableConfig
@@ -89,6 +89,7 @@ def human_in_the_loop():
             tools=[get_user_email_by_name, send_message],
             state_schema=CustomAgentState,
             middleware=[
+                TodoListMiddleware(),
                 HumanInTheLoopMiddleware(
                     interrupt_on={
                         "send_message": InterruptOnConfig(
@@ -107,6 +108,7 @@ def human_in_the_loop():
             ),
             config=config
         )
+        print(result['todos'])
         if result["__interrupt__"]:
             user_result = input(result["__interrupt__"][0].value['action_requests'][0]['description'])
 
