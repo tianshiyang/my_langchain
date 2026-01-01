@@ -5,3 +5,8 @@
 @Author  : tianshiyang
 @File    : __init__.py.py
 """
+from .client import client
+
+__all__ = [
+    "client",
+]
