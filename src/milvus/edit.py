@@ -74,4 +74,15 @@ def inset_to_milvus():
     client.insert(collection_name=COLLECTION_NAME, data=data)
 
 
-inset_to_milvus()
+def search_milvus():
+    result = client.search(
+        collection_name=COLLECTION_NAME,
+        data=[embeddings.embed_query("llmops")],
+        limit=10
+    )
+    print(result)
+
+if __name__ == "__main__":
+    # inset_to_milvus()
+    # search_milvus()
+    pass
