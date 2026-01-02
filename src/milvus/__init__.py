@@ -6,7 +6,9 @@
 @File    : __init__.py.py
 """
 from .client import client
+from .index import CONNECTION_ARGS
 
 __all__ = [
     "client",
+    "CONNECTION_ARGS"
 ]

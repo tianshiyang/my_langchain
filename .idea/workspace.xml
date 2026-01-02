@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="661f4c46-ec06-443f-931b-9579b06bec55" name="更改" comment="feat: 插入数据到milvus">
+    <list default="true" id="661f4c46-ec06-443f-931b-9579b06bec55" name="更改" comment="feat: 用langchain的milvus重构client">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/milvus/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/milvus/client.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/milvus/edit.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/milvus/edit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.env" beforeDir="false" afterPath="$PROJECT_DIR$/src/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/milvus/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/milvus/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/milvus/index.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/milvus/index.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +108,7 @@
       <recent name="$PROJECT_DIR$/src/docs" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.client">
+  <component name="RunManager" selected="Python.index">
     <configuration name="client" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="my_langchain" />
       <option name="ENV_FILES" value="" />
@@ -230,11 +231,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.index" />
         <item itemvalue="Python.client" />
         <item itemvalue="Python.edit" />
         <item itemvalue="Python.database" />
         <item itemvalue="Python.embeddings" />
-        <item itemvalue="Python.index" />
       </list>
     </recent_temporary>
   </component>
@@ -259,7 +260,7 @@
       <workItem from="1766758800808" duration="389000" />
       <workItem from="1766759263991" duration="232000" />
       <workItem from="1766759515895" duration="11689000" />
-      <workItem from="1767165810310" duration="24711000" />
+      <workItem from="1767165810310" duration="34327000" />
     </task>
     <task id="LOCAL-00001" summary="feat: context_engineering.py">
       <option name="closed" value="true" />
@@ -285,7 +286,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767279808079</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat: 用langchain的milvus重构client">
+      <option name="closed" value="true" />
+      <created>1767328077892</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1767328077892</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,7 +304,8 @@
     <MESSAGE value="feat: context_engineering.py" />
     <MESSAGE value="feat: embedding" />
     <MESSAGE value="feat: 插入数据到milvus" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 插入数据到milvus" />
+    <MESSAGE value="feat: 用langchain的milvus重构client" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 用langchain的milvus重构client" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/my_langchain$context_engineering.coverage" NAME="context_engineering 覆盖结果" MODIFIED="1765727201091" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/langchain" />
@@ -305,6 +315,6 @@
     <SUITE FILE_PATH="coverage/my_langchain$quick_start.coverage" NAME="quick_start 覆盖结果" MODIFIED="1765098704660" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/my_langchain$embeddings.coverage" NAME="embeddings 覆盖结果" MODIFIED="1767084836835" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/utils" />
     <SUITE FILE_PATH="coverage/my_langchain$edit.coverage" NAME="edit 覆盖结果" MODIFIED="1767280150078" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/milvus" />
-    <SUITE FILE_PATH="coverage/my_langchain$index.coverage" NAME="index 覆盖结果" MODIFIED="1766758829870" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/milvus" />
+    <SUITE FILE_PATH="coverage/my_langchain$index.coverage" NAME="index 覆盖结果" MODIFIED="1767343694295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/milvus" />
   </component>
 </project>
