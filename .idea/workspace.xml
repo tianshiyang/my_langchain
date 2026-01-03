@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="661f4c46-ec06-443f-931b-9579b06bec55" name="更改" comment="feat: 相似度搜索">
-      <change afterPath="$PROJECT_DIR$/src/milvus/base_use.py" afterDir="false" />
+    <list default="true" id="661f4c46-ec06-443f-931b-9579b06bec55" name="更改" comment="feat: langchain_milvus基本用法">
+      <change afterPath="$PROJECT_DIR$/src/milvus/rag.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/provider/llms.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/provider/llms.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +62,7 @@
     "Python.index.executor": "Run",
     "Python.multi-agent.executor": "Run",
     "Python.quick_start.executor": "Run",
+    "Python.rag.executor": "Run",
     "Python.semantic_search.executor": "Run",
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -108,7 +110,7 @@
       <recent name="$PROJECT_DIR$/src/docs" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.base_use">
+  <component name="RunManager" selected="Python.rag">
     <configuration name="base_use" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="my_langchain" />
       <option name="ENV_FILES" value="" />
@@ -157,30 +159,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="edit" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="my_langchain" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/milvus" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="RUN_TOOL" value="" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/milvus/edit.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="index" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="my_langchain" />
       <option name="ENV_FILES" value="" />
@@ -197,6 +175,30 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="RUN_TOOL" value="" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/milvus/index.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="rag" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="my_langchain" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/milvus" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/milvus/rag.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -231,11 +233,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.rag" />
         <item itemvalue="Python.base_use" />
         <item itemvalue="Python.semantic_search" />
         <item itemvalue="Python.index" />
         <item itemvalue="Python.client" />
-        <item itemvalue="Python.edit" />
       </list>
     </recent_temporary>
   </component>
@@ -261,7 +263,7 @@
       <workItem from="1766759263991" duration="232000" />
       <workItem from="1766759515895" duration="11689000" />
       <workItem from="1767165810310" duration="42809000" />
-      <workItem from="1767425698557" duration="7158000" />
+      <workItem from="1767425698557" duration="15855000" />
     </task>
     <task id="LOCAL-00001" summary="feat: context_engineering.py">
       <option name="closed" value="true" />
@@ -311,7 +313,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767441000567</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="feat: langchain_milvus基本用法">
+      <option name="closed" value="true" />
+      <created>1767443945462</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1767443945462</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -324,7 +334,8 @@
     <MESSAGE value="feat: 用langchain的milvus重构client" />
     <MESSAGE value="feat: milvus" />
     <MESSAGE value="feat: 相似度搜索" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 相似度搜索" />
+    <MESSAGE value="feat: langchain_milvus基本用法" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: langchain_milvus基本用法" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/my_langchain$context_engineering.coverage" NAME="context_engineering 覆盖结果" MODIFIED="1765727201091" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/langchain" />
@@ -336,6 +347,7 @@
     <SUITE FILE_PATH="coverage/my_langchain$embeddings.coverage" NAME="embeddings 覆盖结果" MODIFIED="1767084836835" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/utils" />
     <SUITE FILE_PATH="coverage/my_langchain$edit.coverage" NAME="edit 覆盖结果" MODIFIED="1767280150078" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/milvus" />
     <SUITE FILE_PATH="coverage/my_langchain$base_use.coverage" NAME="base_use 覆盖结果" MODIFIED="1767443664501" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/milvus" />
+    <SUITE FILE_PATH="coverage/my_langchain$rag.coverage" NAME="rag 覆盖结果" MODIFIED="1767453163907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/milvus" />
     <SUITE FILE_PATH="coverage/my_langchain$index.coverage" NAME="index 覆盖结果" MODIFIED="1767344172984" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/milvus" />
   </component>
 </project>

@@ -20,7 +20,7 @@ chatGptLLM = ChatOpenAI(
     model="gpt-4o",
     base_url=os.getenv('XIAO_AI_BASE_URL'),
     api_key=os.getenv('XIAO_AI_API_KEY'),
-    temperature=0.5,
+    temperature=0,
     timeout=10,
     max_tokens=1000
 )
