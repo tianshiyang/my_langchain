@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="661f4c46-ec06-443f-931b-9579b06bec55" name="更改" comment="feat: sql_agent_langchain">
-      <change afterPath="$PROJECT_DIR$/src/milvus/sql_agent_postgres.py" afterDir="false" />
+    <list default="true" id="661f4c46-ec06-443f-931b-9579b06bec55" name="更改" comment="feat: sql_agent_postgres.py">
+      <change afterPath="$PROJECT_DIR$/src/langchain/customer_support.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -266,7 +266,7 @@
       <workItem from="1766759263991" duration="232000" />
       <workItem from="1766759515895" duration="11689000" />
       <workItem from="1767165810310" duration="42809000" />
-      <workItem from="1767425698557" duration="47687000" />
+      <workItem from="1767425698557" duration="64415000" />
     </task>
     <task id="LOCAL-00001" summary="feat: context_engineering.py">
       <option name="closed" value="true" />
@@ -364,7 +364,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767594448567</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="feat: sql_agent_postgres.py">
+      <option name="closed" value="true" />
+      <created>1767598648926</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1767598648926</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -382,7 +390,8 @@
     <MESSAGE value="feat: 混合检索" />
     <MESSAGE value="feat: rag_agent" />
     <MESSAGE value="feat: sql_agent_langchain" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: sql_agent_langchain" />
+    <MESSAGE value="feat: sql_agent_postgres.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: sql_agent_postgres.py" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/my_langchain$database.coverage" NAME="database 覆盖结果" MODIFIED="1767174549058" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/milvus" />
@@ -395,7 +404,7 @@
     <SUITE FILE_PATH="coverage/my_langchain$rag_agent.coverage" NAME="rag_agent 覆盖结果" MODIFIED="1767522502351" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/study" />
     <SUITE FILE_PATH="coverage/my_langchain$context_engineering.coverage" NAME="context_engineering 覆盖结果" MODIFIED="1765727201091" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/langchain" />
     <SUITE FILE_PATH="coverage/my_langchain$sql_agent_langchain.coverage" NAME="sql_agent_langchain 覆盖结果" MODIFIED="1767593784342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/milvus" />
-    <SUITE FILE_PATH="coverage/my_langchain$sql_agent_postgres.coverage" NAME="sql_agent_postgres 覆盖结果" MODIFIED="1767597958961" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/milvus" />
+    <SUITE FILE_PATH="coverage/my_langchain$sql_agent_postgres.coverage" NAME="sql_agent_postgres 覆盖结果" MODIFIED="1767598562950" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/milvus" />
     <SUITE FILE_PATH="coverage/my_langchain$multi_agent.coverage" NAME="multi-agent 覆盖结果" MODIFIED="1765814180246" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/langchain" />
     <SUITE FILE_PATH="coverage/my_langchain$client.coverage" NAME="client 覆盖结果" MODIFIED="1767281552035" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/milvus" />
     <SUITE FILE_PATH="coverage/my_langchain$edit.coverage" NAME="edit 覆盖结果" MODIFIED="1767280150078" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/milvus" />
