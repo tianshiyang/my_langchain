@@ -15,6 +15,10 @@ from langgraph.prebuilt import ToolRuntime
 from provider import chatGptLLM
 from langchain.tools import tool
 
+"""
+Runtime: 可以在工具和中间件中访问runtime
+"""
+
 users = [
     {
         "user_id": "user_001",
@@ -36,6 +40,7 @@ def get_user_info(runtime: ToolRuntime[Context]):
     Returns: 用户基本信息，包括username：用户名, user_id: 用户id
 
     """
+    print(runtime, 'runtime')
     print(runtime.store)
     print(runtime.context)
     print(runtime.state.get('user_like'))
