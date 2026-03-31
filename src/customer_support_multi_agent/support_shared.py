@@ -110,9 +110,9 @@ def get_default_model():
     """当前项目默认模型。"""
     load_dotenv()
     return ChatOpenAI(
-        model=os.getenv("CUSTOMER_SUPPORT_MODEL", "gpt-4o"),
-        base_url=os.getenv("XIAO_AI_BASE_URL"),
-        api_key=os.getenv("XIAO_AI_API_KEY", "demo-key"),
+        model="MiniMax-M2.7",
+        base_url=os.getenv("MINIMAX_BASE_URL"),
+        api_key=os.getenv("MINIMAX_API_KEY"),
         temperature=0,
         timeout=20,
         max_tokens=1200,

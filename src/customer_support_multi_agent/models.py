@@ -19,17 +19,17 @@ class SubTask(BaseModel):
     intent: IntentType
     user_text: str
     slots: dict[str, Any] = Field(default_factory=dict)
-    missing_slots: list[str] = Field(default_factory=list)
+    missing_slots: list[str] = Field(default_factory=list) # 缺哪些关键信息
 
 
 class CustomerIntentResult(BaseModel):
     """前门路由契约。"""
 
-    intents: list[IntentType] = Field(default_factory=list)
-    sub_tasks: list[SubTask] = Field(default_factory=list)
-    missing_slots: list[str] = Field(default_factory=list)
-    need_clarification: bool = False
-    clarification_question: str = ""
+    intents: list[IntentType] = Field(default_factory=list) # 识别到了哪些意图
+    sub_tasks: list[SubTask] = Field(default_factory=list) # 每个原子任务一个 SubTask
+    missing_slots: list[str] = Field(default_factory=list) # 缺哪些关键信息
+    need_clarification: bool = False # 是否需要追问
+    clarification_question: str = "" # 应该怎么追问用户
     confidence: float = 0.0
 
 
