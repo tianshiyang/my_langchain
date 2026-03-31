@@ -68,32 +68,69 @@ class LangChainCustomerSupportApp:
         """
         app = self
 
-        @tool
+        from pydantic import BaseModel
+
+        class LogisticsSpecialistArgs(BaseModel):
+            """物流查询工具的参数。"""
+            task_json: str
+
+        class ProductSpecialistArgs(BaseModel):
+            """商品咨询工具的参数。"""
+            task_json: str
+
+        class RefundSpecialistArgs(BaseModel):
+            """退款工具的参数。
+
+            注意：thread_id 不在此声明，由 LangChain 的 ToolRuntime 框架注入，
+            通过 runtime.context.thread_id 获取。
+            """
+            task_json: str
+
+        @tool(args_schema=LogisticsSpecialistArgs)
         def logistics_specialist(task_json: str) -> str:
             """处理物流查询任务。仅在 task.intent=物流查询 时调用。"""
+            print(f"\n[TOOL CALL] logistics_specialist 被调用")
+            print(f"  └─ 输入参数 task_json: {task_json}")
             task = SubTask.model_validate_json(task_json)
+            print(f"  └─ 解析后 task: task_id={task.task_id}, intent={task.intent}, slots={task.slots}")
+            print(f"[TOOL START] logistics_specialist 开始执行...")
             result = run_logistics_specialist(app.logistics_agent, task)
+            print(f"[TOOL DONE] logistics_specialist 返回 status={result.status}")
+            print(f"  └─ answer: {result.answer[:80]}{'...' if len(result.answer) > 80 else ''}")
             return result.model_dump_json(ensure_ascii=False)
 
-        @tool
+        @tool(args_schema=ProductSpecialistArgs)
         def product_specialist(task_json: str) -> str:
             """处理商品咨询任务。仅在 task.intent=商品咨询 时调用。"""
+            print(f"\n[TOOL CALL] product_specialist 被调用")
+            print(f"  └─ 输入参数 task_json: {task_json}")
             task = SubTask.model_validate_json(task_json)
+            print(f"  └─ 解析后 task: task_id={task.task_id}, intent={task.intent}, slots={task.slots}")
+            print(f"[TOOL START] product_specialist 开始执行...")
             result = run_product_specialist(app.product_agent, task)
+            print(f"[TOOL DONE] product_specialist 返回 status={result.status}")
+            print(f"  └─ answer: {result.answer[:80]}{'...' if len(result.answer) > 80 else ''}")
             return result.model_dump_json(ensure_ascii=False)
 
-        @tool
+        @tool(args_schema=RefundSpecialistArgs)
         def refund_specialist(task_json: str, runtime: ToolRuntime[SupportContext, Any]) -> str:
             """处理退款任务。仅在 task.intent=退款 时调用。
 
-            退款任务需要独立的 thread_id，以避免与同用户其他请求相互干扰。
-            这里通过 runtime.context.thread_id 拼接出一个层级化的 refund_thread_id，
-            形如 "{原始thread_id}:{task_id}"。
+            thread_id 通过 runtime.context.thread_id 获取，
+            拼接为层级化 ID "{原始thread_id}:{task_id}" 以隔离不同退款请求。
             """
-            task = SubTask.model_validate_json(task_json)
+            print(f"\n[TOOL CALL] refund_specialist 被调用")
+            print(f"  └─ 输入参数 task_json: {task_json}")
             thread_id = runtime.context.thread_id
+            print(f"  └─ runtime context thread_id: {thread_id}")
+            task = SubTask.model_validate_json(task_json)
             refund_thread_id = f"{thread_id}:{task.task_id}"
+            print(f"  └─ 解析后 task: task_id={task.task_id}, intent={task.intent}, slots={task.slots}")
+            print(f"  └─ 拼接 refund_thread_id: {refund_thread_id}")
+            print(f"[TOOL START] refund_specialist 开始执行...")
             result = run_refund_specialist(app.refund_agent, task, refund_thread_id)
+            print(f"[TOOL DONE] refund_specialist 返回 status={result.status}, human_required={result.human_required}")
+            print(f"  └─ answer: {result.answer[:80]}{'...' if len(result.answer) > 80 else ''}")
             return result.model_dump_json(ensure_ascii=False)
 
         # supervisor 的 system prompt，定义其行为约束
@@ -145,7 +182,16 @@ class LangChainCustomerSupportApp:
             - debug_input：调试用的原始输入
         """
         # 第一步：路由分析，生成执行计划
+        print(f"\n{'='*60}")
+        print(f"[ROUTER] 开始分析用户问题: {user_query}")
         route_plan = self.route(user_query)
+        print(f"[ROUTER] 路由结果: intents={route_plan.intents}")
+        print(f"[ROUTER] 生成 sub_tasks 数量: {len(route_plan.sub_tasks)}")
+        for i, t in enumerate(route_plan.sub_tasks):
+            print(f"  sub_task[{i}]: task_id={t.task_id}, intent={t.intent}, slots={t.slots}, missing_slots={t.missing_slots}")
+        if route_plan.need_clarification:
+            print(f"[ROUTER] 需要追问: {route_plan.clarification_question}")
+
         serialized_tasks = [
             task.model_dump_json(ensure_ascii=False)
             for task in route_plan.sub_tasks
@@ -172,13 +218,19 @@ class LangChainCustomerSupportApp:
 
         # 优先使用 supervisor agent 模式
         try:
+            print(f"\n[SUPERVISOR] supervisor agent 开始调度，thread_id={thread_id}")
             result = self.supervisor_agent.invoke(
                 {"messages": [HumanMessage(content=control_message)]},
                 context=SupportContext(thread_id=thread_id),
             )
+            print(f"[SUPERVISOR] supervisor agent 调用完成")
+            print(f"[SUPERVISOR] 返回的 messages 数量: {len(result.get('messages', []))}")
             final_answer = getattr(result["messages"][-1], "content", "")
             supervisor_mode = "agent_supervisor"
-        except Exception:
+            print(f"[SUPERVISOR] 最终回复(前100字): {final_answer[:100]}")
+        except Exception as e:
+            print(f"\n[SUPERVISOR] supervisor agent 调用异常: {e}")
+            print(f"[FALLBACK] 降级为确定性分发模式")
             # supervisor 调用失败时，降级为确定性分发：直接遍历 sub_tasks 串行调用 specialist
             task_results: list[TaskResult] = []
             for task in route_plan.sub_tasks:
@@ -196,6 +248,10 @@ class LangChainCustomerSupportApp:
                 task_results,
                 clarification_question=route_plan.clarification_question,
             )
+            print(f"[FALLBACK] synthesize_support_response 汇总完成")
+            print(f"[FALLBACK] 各任务结果:")
+            for tr in task_results:
+                print(f"  └─ [{tr.intent}|{tr.status}] {tr.answer[:60]}{'...' if len(tr.answer)>60 else ''}")
             result = {"task_results": task_results}
             supervisor_mode = "deterministic_fallback"
 
@@ -216,10 +272,10 @@ if __name__ == "__main__":
     # 演示模式：遍历多个典型场景并打印结果
     app = LangChainCustomerSupportApp()
     scenarios = [
-        "帮我查一下订单 A1001 的物流到哪了",
+        # "帮我查一下订单 A1001 的物流到哪了",
         # "无线耳机 Pro 有货吗，续航怎么样？",
         # "订单 A1003 我想退款，原因是买错了",
-        # "帮我查订单 A1001 的物流，另外我想把 A1003 退掉，原因是买错了",
+        "帮我查订单 A1001 的物流，另外我想把 A1003 退掉，原因是买错了",
     ]
 
     for index, query in enumerate(scenarios, start=1):
