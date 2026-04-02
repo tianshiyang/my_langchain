@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="661f4c46-ec06-443f-931b-9579b06bec55" name="更改" comment="feat: custom_agent_langgraph.py">
-      <change beforePath="$PROJECT_DIR$/src/.env" beforeDir="false" afterPath="$PROJECT_DIR$/src/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/customer_support_multi_agent/langchain_customer_support.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/customer_support_multi_agent/langchain_customer_support.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/customer_support_multi_agent/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/customer_support_multi_agent/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/customer_support_multi_agent/support_shared.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/customer_support_multi_agent/support_shared.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,60 +48,60 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.base_use.executor": "Run",
-    "Python.client.executor": "Run",
-    "Python.context_engineering.executor": "Run",
-    "Python.custom_agent_langgraph (1).executor": "Run",
-    "Python.custom_agent_langgraph.executor": "Run",
-    "Python.database.executor": "Run",
-    "Python.edit.executor": "Run",
-    "Python.embeddings.executor": "Run",
-    "Python.hybrid_search.executor": "Run",
-    "Python.index.executor": "Run",
-    "Python.langchain_customer_support.executor": "Run",
-    "Python.mcp_tool_math.executor": "Run",
-    "Python.mcp_tool_weather.executor": "Run",
-    "Python.multi-agent.executor": "Run",
-    "Python.quick_start.executor": "Run",
-    "Python.rag.executor": "Run",
-    "Python.rag_agent.executor": "Run",
-    "Python.router_knowledge_base.executor": "Run",
-    "Python.runtime.executor": "Run",
-    "Python.semantic_search.executor": "Run",
-    "Python.skills_sql_assistant.executor": "Run",
-    "Python.sql_agent_langchain.executor": "Run",
-    "Python.sql_agent_postgres.executor": "Run",
-    "Python.use_mcp.executor": "Run",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "ai.playground.ignore.import.keys.banner.in.settings": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "main",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/Users/icourt1/Desktop/my_langchain/src/docs",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.stylelint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.stylelint": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.base_use.executor&quot;: &quot;Run&quot;,
+    &quot;Python.client.executor&quot;: &quot;Run&quot;,
+    &quot;Python.context_engineering.executor&quot;: &quot;Run&quot;,
+    &quot;Python.custom_agent_langgraph (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.custom_agent_langgraph.executor&quot;: &quot;Run&quot;,
+    &quot;Python.database.executor&quot;: &quot;Run&quot;,
+    &quot;Python.edit.executor&quot;: &quot;Run&quot;,
+    &quot;Python.embeddings.executor&quot;: &quot;Run&quot;,
+    &quot;Python.hybrid_search.executor&quot;: &quot;Run&quot;,
+    &quot;Python.index.executor&quot;: &quot;Run&quot;,
+    &quot;Python.langchain_customer_support.executor&quot;: &quot;Run&quot;,
+    &quot;Python.mcp_tool_math.executor&quot;: &quot;Run&quot;,
+    &quot;Python.mcp_tool_weather.executor&quot;: &quot;Run&quot;,
+    &quot;Python.multi-agent.executor&quot;: &quot;Run&quot;,
+    &quot;Python.quick_start.executor&quot;: &quot;Run&quot;,
+    &quot;Python.rag.executor&quot;: &quot;Run&quot;,
+    &quot;Python.rag_agent.executor&quot;: &quot;Run&quot;,
+    &quot;Python.router_knowledge_base.executor&quot;: &quot;Run&quot;,
+    &quot;Python.runtime.executor&quot;: &quot;Run&quot;,
+    &quot;Python.semantic_search.executor&quot;: &quot;Run&quot;,
+    &quot;Python.skills_sql_assistant.executor&quot;: &quot;Run&quot;,
+    &quot;Python.sql_agent_langchain.executor&quot;: &quot;Run&quot;,
+    &quot;Python.sql_agent_postgres.executor&quot;: &quot;Run&quot;,
+    &quot;Python.use_mcp.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;ai.playground.ignore.import.keys.banner.in.settings&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/icourt1/Desktop/my_langchain/src/docs&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
       <console-settings module-name="my_langchain" sdk-home="$USER_HOME$/.pyenv/versions/my_langhchain/bin/python" is-module-sdk="true">
@@ -128,7 +125,7 @@
       <recent name="$PROJECT_DIR$/src/docs" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.langchain_customer_support">
+  <component name="RunManager" selected="Python.customer_support_multi_agent.langchain_customer_support">
     <configuration name="custom_agent_langgraph (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="my_langchain" />
       <option name="ENV_FILES" value="" />
@@ -153,7 +150,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="langchain_customer_support" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="customer_support_multi_agent.langchain_customer_support" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="my_langchain" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -162,17 +159,17 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/customer_support_multi_agent" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="RUN_TOOL" value="" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/customer_support_multi_agent/langchain_customer_support.py" />
+      <option name="SCRIPT_NAME" value="customer_support_multi_agent.langchain_customer_support" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
+      <option name="MODULE_MODE" value="true" />
       <option name="REDIRECT_INPUT" value="false" />
       <option name="INPUT_FILE" value="" />
       <method v="2" />
@@ -249,9 +246,16 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.custom_agent_langgraph (1)" />
+      <item itemvalue="Python.customer_support_multi_agent.langchain_customer_support" />
+      <item itemvalue="Python.mcp_tool_math" />
+      <item itemvalue="Python.mcp_tool_weather" />
+      <item itemvalue="Python.use_mcp" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.langchain_customer_support" />
+        <item itemvalue="Python.customer_support_multi_agent.langchain_customer_support" />
         <item itemvalue="Python.use_mcp" />
         <item itemvalue="Python.mcp_tool_math" />
         <item itemvalue="Python.mcp_tool_weather" />
@@ -447,8 +451,8 @@
     <option name="LAST_COMMIT_MESSAGE" value="feat: custom_agent_langgraph.py" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/my_langchain$hybrid_search.coverage" NAME="hybrid_search 覆盖结果" MODIFIED="1767505610642" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/milvus" />
     <SUITE FILE_PATH="coverage/my_langchain$database.coverage" NAME="database 覆盖结果" MODIFIED="1767174549058" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/milvus" />
+    <SUITE FILE_PATH="coverage/my_langchain$hybrid_search.coverage" NAME="hybrid_search 覆盖结果" MODIFIED="1767505610642" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/milvus" />
     <SUITE FILE_PATH="coverage/my_langchain$semantic_search.coverage" NAME="semantic_search 覆盖结果" MODIFIED="1767437549454" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/study" />
     <SUITE FILE_PATH="coverage/my_langchain$skills_sql_assistant.coverage" NAME="skills_sql_assistant 覆盖结果" MODIFIED="1767863257069" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/langchain" />
     <SUITE FILE_PATH="coverage/my_langchain$quick_start.coverage" NAME="quick_start 覆盖结果" MODIFIED="1765098704660" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
@@ -463,7 +467,7 @@
     <SUITE FILE_PATH="coverage/my_langchain$router_knowledge_base.coverage" NAME="router_knowledge_base 覆盖结果" MODIFIED="1767837480429" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/langchain" />
     <SUITE FILE_PATH="coverage/my_langchain$index.coverage" NAME="index 覆盖结果" MODIFIED="1767344172984" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/milvus" />
     <SUITE FILE_PATH="coverage/my_langchain$custom_agent_langgraph__1_.coverage" NAME="custom_agent_langgraph (1) 覆盖结果" MODIFIED="1767923104910" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/langgraph_study" />
-    <SUITE FILE_PATH="coverage/my_langchain$langchain_customer_support.coverage" NAME="langchain_customer_support 覆盖结果" MODIFIED="1774936951638" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/customer_support_multi_agent" />
+    <SUITE FILE_PATH="coverage/my_langchain$langchain_customer_support.coverage" NAME="langchain_customer_support 覆盖结果" MODIFIED="1775129891931" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/my_langchain$custom_agent_langgraph.coverage" NAME="custom_agent_langgraph 覆盖结果" MODIFIED="1767886764141" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/langgraph" />
     <SUITE FILE_PATH="coverage/my_langchain$use_mcp.coverage" NAME="use_mcp 覆盖结果" MODIFIED="1768130125049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/langchain_mcp" />
     <SUITE FILE_PATH="coverage/my_langchain$rag.coverage" NAME="rag 覆盖结果" MODIFIED="1767453350149" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/milvus" />
