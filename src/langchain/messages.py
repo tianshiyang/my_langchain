@@ -5,7 +5,7 @@
 @Author  : tianshiyang
 @File    : messages.py
 """
-from provider.llms import chatGptLLM
+from provider import get_default_model
 from langchain.tools import tool
 @tool
 def get_weather(location: str) -> str:
@@ -19,7 +19,7 @@ def get_weather(location: str) -> str:
     """
     return f"{location}的天气是晴天"
 
-response = chatGptLLM.bind_tools([get_weather]).invoke("北京的天气")
+response = get_default_model().bind_tools([get_weather]).invoke("北京的天气")
 for tool_call in response.tool_calls:
     """获取工具调用信息"""
     print(tool_call)
@@ -32,6 +32,6 @@ print(response.usage_metadata)
 
 """流式输出"""
 
-chunks = chatGptLLM.bind_tools([get_weather]).stream("北京的天气")
+chunks = get_default_model().bind_tools([get_weather]).stream("北京的天气")
 for chunk in chunks:
     print(chunk)

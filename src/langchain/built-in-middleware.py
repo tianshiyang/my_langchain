@@ -14,7 +14,7 @@ from langchain_core.runnables import RunnableConfig
 from langgraph.checkpoint.postgres import PostgresSaver
 from pydantic import BaseModel
 
-from provider import chatGptLLM, qwenLLM
+from provider import get_default_model
 
 
 class RequestToAI(BaseModel):
@@ -32,12 +32,12 @@ def use_summarization():
     db_uri = "postgresql://postgres:postgres@localhost:5432/my_langchain?client_encoding=utf8"
     with PostgresSaver.from_conn_string(db_uri) as checkpointer:
         summarization_middleware = SummarizationMiddleware(
-            model=chatGptLLM,
+            model=get_default_model(),
             trigger=("token", 4000),
             keep=("messages", 3)
         )
         agent = create_agent(
-            chatGptLLM,
+            get_default_model(),
             middleware=[summarization_middleware],
             checkpointer=checkpointer,
         )
@@ -67,7 +67,7 @@ def use_human_in_the_loop():
 # =============================3.PII检测==========================
 def use_pii():
     agent = create_agent(
-        qwenLLM,
+        get_default_model(),
         # tools=[customer_service_tool, email_tool],
         middleware=[
             # Redact emails in user input before sending to model

@@ -35,3 +35,16 @@ qwenLLM = ChatQwen(
 google_gemini = ChatGoogleGenerativeAI(
     model="gemini-3-pro-preview",
 )
+
+# MiniMax 大语言模型
+# MiniMax API docs: https://www.minimaxi.com/
+minimax_llm = ChatOpenAI(
+    model="MiniMax-M2.7",
+    base_url="https://api.minimax.chat/v1",
+    api_key=os.getenv("MINIMAX_API_KEY"),  # 设置环境变量 MINIMAX_API_KEY
+    timeout=60,
+    max_tokens=1000
+)
+
+def get_default_model():
+    return minimax_llm

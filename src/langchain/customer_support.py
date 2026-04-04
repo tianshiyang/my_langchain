@@ -16,7 +16,7 @@ from langgraph.checkpoint.memory import InMemorySaver
 from langgraph.prebuilt import ToolRuntime
 from langgraph.types import Command
 
-from provider import chatGptLLM
+from provider import get_default_model
 
 # 定义可能的工作流步骤
 """
@@ -178,13 +178,13 @@ all_tools = [
 ]
 
 agent = create_agent(
-    chatGptLLM,
+    get_default_model(),
     tools=all_tools,
     state_schema=SupportState,
     middleware=[
         apply_step_config,
         SummarizationMiddleware(
-            model=chatGptLLM,
+            model=get_default_model(),
             trigger=("tokens", 4000),
             keep=("messages", 10)
         )],

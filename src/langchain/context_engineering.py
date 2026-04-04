@@ -18,7 +18,7 @@ from langgraph.prebuilt import ToolRuntime
 from langgraph.store.postgres import PostgresStore
 from pydantic import BaseModel, Field
 
-from provider import qwenLLM
+from provider import get_default_model
 
 config = RunnableConfig(
     configurable={
@@ -42,7 +42,7 @@ def use_state_context():
     with PostgresSaver.from_conn_string(db_uri) as checkpointer:
         # ==================================1.系统提示词======================================
         agent = create_agent(
-            qwenLLM,
+            get_default_model(),
             middleware=[use_dynamic_system_prompt],
             system_prompt="你是一个乐于助人的机器人",
             checkpointer=checkpointer,
@@ -118,7 +118,7 @@ def extract_and_save_user_writing(query: str, runtime: ToolRuntime[Context]):
     Returns:
 
     """
-    chain = qwenLLM.with_structured_output(WritingInfo)
+    chain = get_default_model().with_structured_output(WritingInfo)
     result = chain.invoke(query)
     store = runtime.store
     user_id = runtime.context.user_id
@@ -137,7 +137,7 @@ def use_store_context():
             store.setup()
 
             agent = create_agent(
-                qwenLLM,
+                get_default_model(),
                 tools=[get_user_info, extract_and_save_user_writing],
                 middleware=[inject_writing_style],
                 checkpointer=checkpointer,

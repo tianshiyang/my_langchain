@@ -16,7 +16,7 @@ from langgraph.graph import StateGraph
 from langgraph.types import Send
 from pydantic import BaseModel, Field
 
-from provider import chatGptLLM
+from provider import get_default_model
 
 
 # 定义状态
@@ -82,26 +82,26 @@ def get_thread(thread_id: str) -> str:
 
 # 3. 创建agent
 github_agent = create_agent(
-    chatGptLLM,
+    get_default_model(),
     tools=[search_code, search_issues, search_prs],
     system_prompt="你是一名GitHub专家。通过搜索仓库、问题和拉取请求，回答关于代码、API参考和实现细节的问题"
 )
 
 notion_agent = create_agent(
-    chatGptLLM,
+    get_default_model(),
     tools=[search_notion, get_page],
     system_prompt="你是一名Notion专家。通过搜索组织的Notion工作区来回答有关内部流程、政策和团队文档的问题"
 )
 
 slack_agent = create_agent(
-    chatGptLLM,
+    get_default_model(),
     tools=[search_slack, get_thread],
     system_prompt="你是一个Slack专家。通过搜索相关线程和讨论来回答问题，团队成员在这些地方分享了知识和解决方案"
 )
 
 # 4. 构建路由工作流程
 
-router_llm = chatGptLLM
+router_llm = get_default_model()
 # 为分类器定义结构化输出模式
 class ClassificationResult(BaseModel):
     # 将用户查询分类为面向特定智能体的子问题的结果

@@ -1,0 +1,6 @@
+interface:
+  display_name: "LangChain Docs"
+  short_description: "Verify answers against latest LangChain docs"
+  default_prompt: "Use $langchain-latest-docs to verify the answer against the latest official LangChain docs before responding."
+policy:
+  allow_implicit_invocation: true

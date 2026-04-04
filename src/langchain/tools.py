@@ -16,7 +16,7 @@ from langgraph.prebuilt import ToolRuntime
 from langgraph.types import Command
 from pydantic import BaseModel, Field
 
-from provider import chatGptLLM
+from provider import get_default_model
 
 #
 # # 复杂参数用Pydantic的BaseModel
@@ -135,7 +135,7 @@ def get_account_info(runtime: ToolRuntime[UserContext]) -> str:
         return f"账号描述：{user['name']}\nType: {user['account_type']}\nBalance: ${user['balance']}"
     return "用户不存在"
 
-model = chatGptLLM
+model = get_default_model()
 agent = create_agent(
     model,
     tools=[get_account_info],
@@ -187,7 +187,7 @@ def save_user_info(user_id: str, user_info: dict[str, Any], runtime: ToolRuntime
     return "保存用户信息成功"
 
 agent = create_agent(
-    model=chatGptLLM,
+    model=get_default_model(),
     tools=[get_user_info, save_user_info],
     store=memory_store,
 )
@@ -216,7 +216,7 @@ def get_weather(city: str, runtime: ToolRuntime) -> str:
     return f"It's always sunny in {city}!"
 
 weather_agent = create_agent(
-    model=chatGptLLM,
+    model=get_default_model(),
     tools=[get_weather],
 )
 

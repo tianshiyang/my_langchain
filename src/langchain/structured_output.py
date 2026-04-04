@@ -12,7 +12,7 @@ from langchain.agents.structured_output import ProviderStrategy, ToolStrategy
 from langchain_core.messages import HumanMessage
 from pydantic import BaseModel, Field, EmailStr
 
-from provider import chatGptLLM
+from provider import get_default_model
 
 
 class ContactInfo(BaseModel):
@@ -27,7 +27,7 @@ class Request(BaseModel):
 # ===============1.使用提供商策略=================
 def use_provider_strategy():
     agent = create_agent(
-        chatGptLLM,
+        get_default_model(),
         response_format=ProviderStrategy(ContactInfo)
     )
 
@@ -40,7 +40,7 @@ def use_provider_strategy():
 # ===============2.使用工具策略=================
 def use_tool_strategy():
     agent = create_agent(
-        chatGptLLM,
+        get_default_model(),
         response_format=ToolStrategy(ContactInfo)
     )
 

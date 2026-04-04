@@ -12,7 +12,7 @@ from langchain.agents.middleware import dynamic_prompt, ModelRequest
 from langchain_core.messages import HumanMessage
 from langgraph.prebuilt import ToolRuntime
 
-from provider import chatGptLLM
+from provider import get_default_model
 from langchain.tools import tool
 
 """
@@ -58,7 +58,7 @@ def dynamic_system_prompt(request: ModelRequest) -> str:
 
 def use_context():
     agent = create_agent(
-        chatGptLLM,
+        get_default_model(),
         tools=[get_user_info],
         middleware=[dynamic_system_prompt],
         context_schema=Context,

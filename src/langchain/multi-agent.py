@@ -13,7 +13,7 @@ from langchain_core.runnables import RunnableConfig
 from langgraph.checkpoint.memory import InMemorySaver
 from langgraph.types import Command
 
-from provider import qwenLLM
+from provider import get_default_model
 
 
 # ============================================================================
@@ -83,7 +83,7 @@ def get_available_time_slots(
 # ============================================================================
 
 calendar_agent = create_agent(
-    qwenLLM,
+    get_default_model(),
     tools=[create_calendar_event, get_available_time_slots],
     middleware=[
         HumanInTheLoopMiddleware(
@@ -100,7 +100,7 @@ calendar_agent = create_agent(
 )
 
 email_agent = create_agent(
-    qwenLLM,
+    get_default_model(),
     tools=[send_email],
     middleware=[
         HumanInTheLoopMiddleware(
@@ -154,7 +154,7 @@ def manage_email(request: str) -> str:
 # 第四步：创建主agent
 # ============================================================================
 supervisor_agent = create_agent(
-    qwenLLM,
+    get_default_model(),
     tools=[schedule_event, manage_email],
     checkpointer=InMemorySaver(),
     system_prompt=("你是一个乐于助人的机器人"

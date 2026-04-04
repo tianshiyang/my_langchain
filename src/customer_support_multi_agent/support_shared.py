@@ -58,6 +58,19 @@ ORDERS: dict[str, dict[str, Any]] = {
             "reason": "订单金额较高，需要人工审核后才能继续退款。",
         },
     },
+    "A1004": {
+        "order_id": "A1004",
+        "product_name": "显示器 M27",
+        "shipping_status": "已签收",
+        "tracking_no": "SF9988007766",
+        "eta": "2026-03-31",
+        "refund_policy": {
+            "eligible": True,
+            "audit_required": False,
+            "manual_approval_required": True,
+            "reason": "订单符合退款条件，但因金额较高，退款放行前需要值班主管确认。",
+        },
+    },
 }
 
 PRODUCTS: dict[str, dict[str, Any]] = {
@@ -181,6 +194,7 @@ def refund_eligibility_service(order_id: str) -> dict[str, Any]:
         "order_id": order_id,
         "eligible": policy["eligible"],
         "audit_required": policy["audit_required"],
+        "manual_approval_required": policy.get("manual_approval_required", False),
         "reason": policy["reason"],
     }
 
@@ -891,3 +905,8 @@ def synthesize_support_response(
         if clarification_question:
             lines.append(clarification_question)
         return "\n".join(lines)
+
+if __name__ == "__main__":
+    model = get_default_model()
+    resp = model.invoke("你好")
+    print(resp)

@@ -15,7 +15,7 @@ from langchain_core.messages import SystemMessage
 from langchain_core.tools import tool
 from langgraph.checkpoint.memory import InMemorySaver
 
-from provider import chatGptLLM
+from provider import get_default_model
 
 
 # 1. 定义技能
@@ -195,7 +195,7 @@ class SkillsMiddleware(AgentMiddleware):
 
 # 4.创建具有技能支持的agent
 agent = create_agent(
-    chatGptLLM,
+    get_default_model(),
     system_prompt="你是一个 SQL 查询助手，帮助用户编写针对业务数据库的查询语句。",
     checkpointer=InMemorySaver(),
     middleware=[SkillsMiddleware()]

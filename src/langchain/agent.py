@@ -11,7 +11,7 @@ from langchain.agents.structured_output import ToolStrategy
 from langchain_core.messages import ToolMessage, HumanMessage
 from pydantic import BaseModel
 
-from provider.llms import qwenLLM, chatGptLLM
+from provider import get_default_model
 from langchain.tools import tool
 
 # 定义工具
@@ -41,9 +41,9 @@ def dynamic_model_selection(request: ModelRequest, handler) -> ModelResponse:
     message_count = len(request.state["messages"])
 
     if message_count > 10:
-        model = qwenLLM
+        model = get_default_model()
     else:
-        model = chatGptLLM
+        model = get_default_model()
 
     return handler(request.override(model=model))
 
@@ -77,7 +77,7 @@ def user_role_prompt(request: ModelRequest) -> str:
     return base_prompt
 
 agent = create_agent(
-    model=qwenLLM, # 默认模型
+    model=get_default_model(), # 默认模型
     tools=[get_weather, search],
     middleware=[dynamic_model_selection, user_role_prompt],
     system_prompt="你是一个乐于助人的AI助手",

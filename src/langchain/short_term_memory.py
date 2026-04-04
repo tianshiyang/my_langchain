@@ -19,7 +19,7 @@ from langgraph.runtime import Runtime
 from langgraph.types import Command
 from pydantic import BaseModel
 
-from provider import chatGptLLM
+from provider import get_default_model
 
 class CustomAgentState(AgentState):
     user_id: str
@@ -121,12 +121,12 @@ with PostgresSaver.from_conn_string(DB_URI) as checkpointer:
         }
 
     agent = create_agent(
-        chatGptLLM,
+        get_default_model(),
         tools=[get_user_info],
         middleware=[
             trim_messages,
             SummarizationMiddleware( # 摘要总结中间件
-                model=chatGptLLM,
+                model=get_default_model(),
                 trigger=("tokens", 4000),
                 keep=20
             ),

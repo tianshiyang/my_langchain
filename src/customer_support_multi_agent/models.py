@@ -10,6 +10,10 @@ from pydantic import BaseModel, Field
 
 IntentType = Literal["物流查询", "商品咨询", "退款"]
 TaskTerminalStatus = Literal["done", "blocked_waiting_user", "escalated_to_human"]
+ReviewDecision = Literal["approved", "revise"]
+
+MAX_SUPERVISOR_ROUNDS = 6
+MAX_REVIEW_ROUNDS = 2
 
 
 class SubTask(BaseModel):
@@ -45,6 +49,13 @@ class TaskResult(BaseModel):
     raw_data: dict[str, Any] = Field(default_factory=dict)
 
 
+class ReviewResult(BaseModel):
+    """reviewer 的统一输出。"""
+
+    decision: ReviewDecision
+    feedback: str = ""
+
+
 class RefundState(BaseModel):
     """退款子流程共享状态。"""
 
@@ -67,3 +78,21 @@ def all_results_terminal(task_results: list[TaskResult]) -> bool:
         task.status in {"done", "blocked_waiting_user", "escalated_to_human"}
         for task in task_results
     )
+
+
+def should_stop_agent_loop(
+    task_results: list[TaskResult],
+    review_result: ReviewResult | None = None,
+    supervisor_round: int = 0,
+    review_round: int = 0,
+    max_supervisor_rounds: int = MAX_SUPERVISOR_ROUNDS,
+    max_review_rounds: int = MAX_REVIEW_ROUNDS,
+) -> bool:
+    """统一的 loop 停止条件。"""
+    if supervisor_round >= max_supervisor_rounds:
+        return True
+    if review_round >= max_review_rounds:
+        return True
+    if not review_result:
+        return False
+    return all_results_terminal(task_results) and review_result.decision == "approved"

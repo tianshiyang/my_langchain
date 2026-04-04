@@ -16,7 +16,7 @@ from langgraph.checkpoint.memory import InMemorySaver
 from langgraph.prebuilt import ToolRuntime
 from pydantic import BaseModel
 
-from provider import chatGptLLM, qwenLLM
+from provider import get_default_model
 
 
 # def get_weather(city: str) -> str:
@@ -72,7 +72,7 @@ def get_user_location(runtime: ToolRuntime[Context]) -> str:
     return "上海" if user_id == "1" else "北京"
 
 # 第三步：配置模型
-model = qwenLLM
+model = get_default_model()
 
 # 第四步：定义响应格式
 @dataclass

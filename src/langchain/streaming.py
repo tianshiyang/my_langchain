@@ -10,7 +10,7 @@ from langchain_core.messages import HumanMessage, AIMessage, ToolMessage
 from langchain_core.tools import tool
 from pydantic import BaseModel
 
-from provider import chatGptLLM, qwenLLM
+from provider import get_default_model
 
 class UserRequest(BaseModel):
     messages: list[HumanMessage | AIMessage | ToolMessage]
@@ -77,7 +77,7 @@ def example_1_stream_mode_values():
     print("=" * 70)
 
     agent = create_agent(
-        qwenLLM,
+        get_default_model(),
         tools=[calculator]
     )
 
@@ -138,7 +138,7 @@ def example_2_stream_mode_updates():
     print("=" * 70)
 
     agent = create_agent(
-        qwenLLM,
+        get_default_model(),
         tools=[calculator]
     )
 
@@ -206,7 +206,7 @@ def example_3_stream_mode_messages():
     print("=" * 70)
 
     agent = create_agent(
-        qwenLLM,
+        get_default_model(),
         tools=[calculator]
     )
 

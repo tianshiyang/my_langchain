@@ -17,7 +17,7 @@ from langgraph.prebuilt import ToolRuntime
 from langgraph.types import Command
 from pydantic import BaseModel, Field
 
-from provider import qwenLLM, chatGptLLM
+from provider import get_default_model
 
 all_users = {
     "user_123": {
@@ -57,7 +57,7 @@ class UserIntention(BaseModel):
     decisions: Literal['approve', 'reject', 'edit'] = Field(description="用户的决定, 可选approve同意/reject拒绝/edit编辑")
     edited_action: SendMessageArgs
 
-chain = chatGptLLM.with_structured_output(UserIntention)
+chain = get_default_model().with_structured_output(UserIntention)
 
 @tool(args_schema=SendMessageArgs)
 def send_message(email: str, message: str, runtime: ToolRuntime[CustomAgentState]):
@@ -85,7 +85,7 @@ def human_in_the_loop():
     with PostgresSaver.from_conn_string(DB_URI) as checkpointer:
         checkpointer.setup()
         agent = create_agent(
-            chatGptLLM,
+            get_default_model(),
             tools=[get_user_email_by_name, send_message],
             state_schema=CustomAgentState,
             middleware=[
