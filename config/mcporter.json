@@ -2,6 +2,23 @@
   "mcpServers": {
     "exa": {
       "baseUrl": "https://mcp.exa.ai/mcp"
+    },
+    "postgres": {
+      "command": "npx",
+      "args": [
+        "@modelcontextprotocol/server-postgres",
+        "postgresql://user:password@localhost:5432/database"
+      ]
+    },
+    "mysql": {
+      "command": "mysql-mcp-server",
+      "args": [
+        "--host", "localhost",
+        "--port", "3306",
+        "--name", "root",
+        "--password", "your_password",
+        "--database", "your_database"
+      ]
     }
   }
 }
